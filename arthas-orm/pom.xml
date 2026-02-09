@@ -8,15 +8,13 @@
     </parent>
 
     <artifactId>arthas-orm</artifactId>
+    <version>${arthas.orm.version}</version>
     <packaging>jar</packaging>
-
-    <name>arthas-orm</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <!--todo: add dependencies -->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -25,4 +23,18 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
