@@ -28,6 +28,18 @@
         <arthas.orm.version>1.0-SNAPSHOT</arthas.orm.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <!-- 工具库依赖 -->
     <dependencies>
         <dependency>
