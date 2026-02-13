@@ -1,8 +1,13 @@
 package com.ai.cloud.arthas.orm.sql.where;
 
+import com.ai.cloud.arthas.orm.sql.Operate;
+
 /**
  * @author <a href="mailto:liuyi304@jd.com">liuyi304</a>
  * @date 2026-02-12 14:39
  * @description Matches
- */public class Matches {
+ */
+public class Matches implements Operate {
+
+
 }

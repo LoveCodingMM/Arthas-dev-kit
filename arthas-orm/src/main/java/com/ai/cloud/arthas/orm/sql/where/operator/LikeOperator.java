@@ -1,9 +1,32 @@
 package com.ai.cloud.arthas.orm.sql.where.operator;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @author <a href="mailto:liuyi304@jd.com">liuyi304</a>
  * @date 2026-02-12 14:44
  * @description LikeOperator
  */
-public class LikeOperator {
+public class LikeOperator implements Operator {
+    private final boolean leftStrict;
+    private final boolean rightStrict;
+    private final Object value;
+
+    public LikeOperator(boolean leftStrict, boolean rightStrict, Object value) {
+        this.leftStrict = leftStrict;
+        this.rightStrict = rightStrict;
+        this.value = value;
+    }
+
+    @Override
+    public String getPreparedSql(String column) {
+        return column + " like ?";
+    }
+
+    @Override
+    public List<Object> getParams() {
+        String str = (leftStrict ? "" : "%") + value + (rightStrict ? "" : "%");
+        return Collections.singletonList(str);
+    }
 }
