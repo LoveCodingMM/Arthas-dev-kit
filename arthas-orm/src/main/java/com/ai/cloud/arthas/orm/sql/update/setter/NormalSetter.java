@@ -2,6 +2,7 @@ package com.ai.cloud.arthas.orm.sql.update.setter;
 
 import com.ai.cloud.arthas.orm.sql.where.operator.Operator;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,11 +19,11 @@ public class NormalSetter implements Operator {
 
     @Override
     public String getPreparedSql(String column) {
-        return null;
+        return column + "=?";
     }
 
     @Override
     public List<Object> getParams() {
-        return null;
+        return Collections.singletonList(value);
     }
 }
